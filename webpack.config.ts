@@ -32,6 +32,10 @@ const config: webpack.Configuration = {
         loader: 'source-map-loader'
       },
       {
+        test: /\.html$/,
+        loader: 'html-loader'
+      },
+      {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
       }
@@ -40,7 +44,7 @@ const config: webpack.Configuration = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Hot Module Replacement'
+      template: 'app/index.html'
     }),
     new webpack.HotModuleReplacementPlugin()
   ]
