@@ -19,9 +19,22 @@ const config: webpack.Configuration = {
   module: {
     rules: [
       // changed from { test: /\.jsx?$/, use: { loader: 'babel-loader' } },
-      { test: /\.(t|j)sx?$/, use: { loader: 'awesome-typescript-loader' } },
+      {
+        test: /\.(t|j)sx?$/,
+        use: {
+          loader: 'awesome-typescript-loader'
+        }
+      },
       // addition - add source-map support
-      { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' }
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'source-map-loader'
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
     ]
   },
   plugins: [

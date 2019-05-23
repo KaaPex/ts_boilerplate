@@ -8,8 +8,12 @@ const options = {
   host: 'localhost'
 };
 
-WebpackDevServer.addDevServerEntrypoints(config, options);
-const compiler = webpack(config);
+const argv = {
+  mode: 'development'
+};
+
+WebpackDevServer.addDevServerEntrypoints(config(null, argv), options);
+const compiler = webpack(config(null, argv));
 const server = new WebpackDevServer(compiler, options);
 
 server.listen(5000, 'localhost', () => {
