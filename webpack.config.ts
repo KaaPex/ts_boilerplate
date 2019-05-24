@@ -1,9 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import CleanWebpackPlugin from 'clean-webpack-plugin';
 
-const development = require('./webpack.development.config');
+const development:Object = require('./webpack.development.config');
 
 const config: webpack.Configuration = {
   mode: 'production',
@@ -40,14 +38,7 @@ const config: webpack.Configuration = {
         use: ['style-loader', 'css-loader']
       }
     ]
-  },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      template: 'app/index.html'
-    }),
-    new webpack.HotModuleReplacementPlugin()
-  ]
+  }
 };
 
 module.exports = (env, argv) => {

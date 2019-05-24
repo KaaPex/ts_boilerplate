@@ -1,8 +1,8 @@
-(function component() {
-  const element = document.getElementById('app');
-  const btn = document.createElement('button');
+(function component(): HTMLElement | null {
+  const element: HTMLElement | null = document.getElementById('app');
+  const btn: HTMLButtonElement = document.createElement('button');
 
-  btn.innerHTML = 'Click me! Yeahh...';
+  btn.innerHTML = 'Click me! Yeah...';
 
   if (element) {
     element.appendChild(btn);
