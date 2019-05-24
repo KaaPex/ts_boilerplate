@@ -1,11 +1,11 @@
 import path from 'path';
 import webpack from 'webpack';
 
-const development:Object = require('./webpack.development.config');
+const development: webpack.Configuration  = require('./webpack.development.config');
 
 const config: webpack.Configuration = {
   mode: 'production',
-  entry: './app/app.ts',
+  entry: __dirname + '/app/app.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'app.bundle.js'
@@ -41,7 +41,7 @@ const config: webpack.Configuration = {
   }
 };
 
-module.exports = (env, argv) => {
+module.exports = (env, argv): webpack.Configuration => {
   if (argv.mode === 'development') {
     console.log('Setting up Dev Mode');
     return { ...config, ...development };

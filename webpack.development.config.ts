@@ -13,10 +13,10 @@ const devConfig: webpack.Configuration = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: 'app/index.html'
+      template: __dirname + '/app/index.html'
     }),
     new webpack.HotModuleReplacementPlugin()
   ]
 };
 
-export default devConfig as webpack.Configuration;
+module.exports = devConfig;

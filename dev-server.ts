@@ -2,7 +2,7 @@ import WebpackDevServer from 'webpack-dev-server';
 import webpack from 'webpack';
 
 const config = require('./webpack.config.ts');
-const options:Object = {
+const options:WebpackDevServer.Configuration = {
   contentBase: './dist',
   hot: true,
   host: 'localhost'
